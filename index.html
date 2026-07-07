@@ -556,6 +556,34 @@ body.dark-mode .dark-mode-btn .moon-icon {
     order: -1 !important;
   }
 }
+       @media (max-width: 768px) {
+  /* نصغر البانر الاساسي كله */
+  section:first-of-type {
+    min-height: 500px !important;
+    height: auto !important;
+    padding: 20px 15px !important;
+    margin-top: 0 !important;
+    overflow: visible !important;
+  }
+  
+  /* نطلع الكلام لفوق */
+  section:first-of-type > div {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+  
+  /* نصغر العنوان لو كبير */
+  section:first-of-type h1 {
+    font-size: 22px !important;
+    margin-top: 0 !important;
+    padding-top: 10px !important;
+  }
+  
+  section:first-of-type img {
+    height: 300px !important;
+    margin-top: 15px !important;
+  }
+} 
     </style>
 </head>
 <body>
