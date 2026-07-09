@@ -1,641 +1,830 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الفساتين - اصالة</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Amiri:wght@400;700&family=El+Messiri:wght@400;600;700&display=swap');
-    
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    html {
-        scroll-behavior: smooth;
-    }
-    
-    body {
-        background: #FAF9F6;
-        font-family: 'Cairo', sans-serif;
-        color: #2C2C2C;
-        overflow-x: hidden;
-        transition: background 0.3s ease, color 0.3s ease;
-    }
+    <title>Asalah Fashion Store </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap');
+        /* About */
+.about {
+    padding: 120px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    background: #fff;
+}
 
-    /* البانل */
+.about-img {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-img::after {
+    content: '';
+    position: absolute;  
+    top: -20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #C9A961;
+    z-index: -1;
+}
+.nav-links a.active::after {
+    content: '';
+    position absolute;
+    bottom: -8px;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: #C9A961;
+    border-radius: 2px;
+}
+
+.about-text h2 {
+    font-family: 'Amiri', serif;
+    font-size: 48px;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.about-text p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.signature {
+    font-family: 'Amiri', serif;
+    font-size: 32px;
+    color: #C9A961;
+    font-style: 'Amiri', serif;
+    margin-top: 30px;
+}
+
+/* دارك مود للـ About */
+body.dark-mode .about {
+    background: #1a1a1a;
+}
+
+body.dark-mode .about-text h2 {
+    color: #fff;
+}
+
+body.dark-mode .about-text p {
+    color: #aaa;
+}
+
+/* موبايل */
+@media (max-width: 968px) {
+    .about {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: #FAF9F6;
+            font-family: 'Amiri', serif;;
+            color: #2C2C2C;
+            overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        /* البانل */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            font-family: 'Amiri', serif;;
+            font-size: 50px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #2C2C2C;
+        }
+
+        .logo span {
+            color: #C9A961;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #2c2c2c;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+            font-weight: 600;
+            transition: 0.3s;
+            position: relative;        
+            }
+
+        .nav-links a:hover {
+            color: #C9A961;
+        }
+
+        .dark-mode-btn {
+    background: transparent;
+    border: 2px solid #222;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222;
+}
+
+.dark-mode-btn:hover {
+    transform: rotate(20deg);
+}
+
+.dark-mode-btn .sun-icon {
+    display: none;
+}
+
+.dark-mode-btn .moon-icon {
+    display: block;
+}
+
+body.dark-mode .dark-mode-btn {
+    border-color: #fff;
+    color: #fff;
+}
+
+body.dark-mode .dark-mode-btn .sun-icon {
+    display: block;
+}
+
+body.dark-mode .dark-mode-btn .moon-icon {
+    display: none;
+}
+        /* Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text h1 {
+            font-family: 'Amiri', serif;
+            font-size: 64px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .hero-text h1 .gold {
+            color: #C9A961;
+            font-style: italic;
+        }
+
+        .hero-text p {
+            font-size: 17px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: #2C2C2C;
+            color: #FAF9F6;
+            padding: 16px 45px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.4s;
+            letter-spacing: 1px;
+        }
+
+        .hero-cta:hover {
+            background: #C9A961;
+            transform: translateX(-5px);
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Collections */
+        .collections {
+            padding: 120px 8%;
+            background: #fff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-label {
+            color: #C9A961;
+            font-size: 13px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: 'Amiri', serif;
+            font-size: 48px;
+            font-weight: 400;
+            color: #2C2C2C;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .gallery-item {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .gallery-item .image-wrapper {
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            background: #f5f5f5;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-info {
+            padding: 20px;
+            text-align: center;
+            background: #fff;
+        }
+
+        .gallery-info h3 {
+            margin: 0 0 8px 0;
+            font-size: 20px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .gallery-info p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 8%;
+            background: #2C2C2C;
+            text-align: center;
+            color: #FAF9F6;
+        }
+
+        .cta-section h2 {
+            font-family: 'Amiri', serif;
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .cta-section p {
+            font-size: 17px;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: #C9A961;
+            color: #2C2C2C;
+            padding: 16px 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.4s;
+            letter-spacing: 1px;
+        }
+
+        .cta-btn:hover {
+            background: #FAF9F6;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 50px 8%;
+            text-align: center;
+            background: #FAF9F6;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 25px;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #C9A961;
+        }
+
+        .nav-links a.active {color: #C9A961 !important;
+            font-family: 'Amiri', serif;
+            font-weight: 600;
+        }
+
+
+        .footer p {
+            color: #999;
+            font-size: 13px;
+        }
+
+        /* زرار اطلع فوق */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: #222;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .back-to-top:hover {
+            background: #000;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* الدارك مود */
+        body.dark-mode {
+            background: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .nav {
+            background: rgba(26, 26, 26, 0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        body.dark-mode .logo,
+        body.dark-mode .nav-links a {
+            color: #e0e0e0;
+        }
+
+        body.dark-mode .section-title {
+            color: #fff;
+        }
+
+        body.dark-mode .collections {
+            background: #1a1a1a;
+        }
+
+        body.dark-mode .gallery-item {
+            background: #2a2a2a;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        body.dark-mode .gallery-info {
+            background: #2a2a2a;
+        }
+
+        body.dark-mode .gallery-info h3 {
+            color: #fff;
+        }
+
+        body.dark-mode .gallery-info p {
+            color: #aaa;
+        }
+
+        body.dark-mode .section-label {
+            color: #C9A961;
+        }
+
+        body.dark-mode .footer {
+            background: #111;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        body.dark-mode .dark-mode-btn {
+            border-color: #fff;
+        }
+
+        body.dark-mode .back-to-top {
+            background: #fff;
+            color: #222;
+        }
+
+        body.dark-mode .hero-text h1 {
+            color: #fff;
+        }
+
+        body.dark-mode .hero-text p {
+            color: #aaa;
+        }
+
+        @media (max-width: 968px) {
     .nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        padding: 20px 8%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 1000;
-        background: rgba(250, 249, 246, 0.95);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .nav-right {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-    }
-
-    .logo {
-        font-family: 'Playfair Display', serif;
-        font-size: 50px;
-        font-weight: 700;
-        letter-spacing: 3px;
-        color: #2C2C2C;
-    }
-
-    .logo span {
-        color: #C9A961;
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 40px;
-        list-style: none;
-    }
-
-    .nav-links a {
-        color: #2C2C2C;
-        text-decoration: none;
-        font-size: 15px;
-        transition: 0.3s;
-        font-weight: 400;
-        position: relative;
-    }
-
-    .nav-links a:hover {
-        color: #C9A961;
-    }
-
-    .nav-links a.active {
-        color: #C9A961;
-        font-weight: 600;
-    }
-
-    .nav-links a.active::after {
-        content: '';
-        position: absolute;
-        bottom: -8px;
-        right: 0;
-        width: 100%;
-        height: 2px;
-        background: #C9A961;
-    }
-
-    .dark-mode-btn {
-        background: transparent;
-        border: 2px solid #222;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #222;
-        font-size: 20px;
+        flex-direction: column;
+        padding: 15px 5%;
+        gap: 15px;
     }
     
-    .dark-mode-btn:hover {
-        transform: rotate(20deg);
-    }
-
-    /* عنوان الصفحة */
-    .page-header {
-        padding: 150px 8% 60px;
-        text-align: center;
-        background: #fff;
-    }
-
-    .page-label {
-        color: #C9A961;
-        font-family: 'El Messiri', sans-serif;
-        font-size: 14px;
-        letter-spacing: 0px;
-        margin-bottom: 12px;
-        font-weight: 600;
-    }
-
-    .page-title {
-        font-family: 'Amiri', serif;
-        font-size: 64px;
-        font-weight: 700;
-        color: #2C2C2C;
-        margin-bottom: 15px;
-        line-height: 1.3;
-    }
-
-    .page-desc {
-        color: #666;
-        font-size: 17px;
-        max-width: 600px;
-        margin: 0 auto 40px;
-    }
-
-    /* الفلاتر */
-    .filters {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-    .filter-btn {
-        padding: 10px 25px;
-        background: #fff;
-        border: 2px solid #E0E0E0;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: 0.3s;
-        font-size: 14px;
-        font-weight: 600;
-        color: #666;
-    }
-
-    .filter-btn:hover, .filter-btn.active {
-        background: #C9A961;
-        border-color: #C9A961;
-        color: #fff;
-    }
-
-    /* جريد الفساتين */
-    .dresses-grid {
-        padding: 60px 8% 100px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 35px;
-        background: #FAF9F6;
-    }
-
-    .dress-card {
-        background: #fff;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        transition: all 0.4s ease;
-    }
-
-    .dress-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-    }
-
-    .dress-img {
-        aspect-ratio: 3/4;
-        overflow: hidden;
-        background: #f5f5f5;
-        position: relative;
-    }
-
-    .dress-img img {
+    .nav-right {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        transition: transform 0.6s ease;
-    }
-
-    .dress-card:hover .dress-img img {
-        transform: scale(1.1);
-    }
-
-    .dress-badge {
-        position: absolute;
-        top: 15px;
-        right: 15px;
-        background: #C9A961;
-        color: #fff;
-        padding: 6px 15px;
-        border-radius: 50px;
-        font-size: 12px;
-        font-weight: 600;
-    }
-
-    .dress-info {
-        padding: 25px;
-    }
-
-    .dress-category {
-        color: #C9A961;
-        font-size: 12px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        margin-bottom: 8px;
-    }
-
-    .dress-name {
-        font-size: 22px;
-        font-weight: 700;
-        color: #2C2C2C;
-        margin-bottom: 10px;
-    }
-
-    .dress-desc {
-        color: #666;
-        font-size: 14px;
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-
-    .dress-footer {
-        display: flex;
         justify-content: space-between;
-        align-items: center;
-        padding-top: 15px;
-        border-top: 1px solid #eee;
     }
-
-    .dress-price {
-        font-size: 20px;
-        font-weight: 700;
-        color: #2C2C2C;
+    
+    .nav-links {
+        gap: 20px;
     }
-
-    .order-btn {
-        display: inline-block;
-        background: #2C2C2C;
-        color: #FAF9F6;
-        padding: 10px 25px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 600;
-        transition: 0.3s;
-        border: 2px solid #2C2C2C;
-    }
-
-    .order-btn:hover {
-        background: #C9A961;
-        border-color: #C9A961;
-        color: #fff;
-    }
-
-    /* Footer */
-    .footer {
-        padding: 50px 8%;
-        text-align: center;
-        background: #fff;
-        border-top: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .footer-links {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        margin-bottom: 25px;
-    }
-
-    .footer-links a {
-        color: #666;
-        text-decoration: none;
-        font-size: 14px;
-        transition: 0.3s;
-    }
-
-    .footer-links a:hover {
-        color: #C9A961;
-    }
-
-    .footer p {
-        color: #999;
+    
+    .nav-links a {
         font-size: 13px;
     }
-
-    /* ===== الدارك مود ===== */
-    body.dark-mode {
-        background: #1a1a1a;
-        color: #e0e0e0;
+    
+    .logo {
+        font-size: 35px;
     }
-
-    body.dark-mode .nav {
-        background: rgba(26, 26, 26, 0.95);
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+    
+    .hero {
+        margin-top: 140px;
     }
-
-    body.dark-mode .logo,
-    body.dark-mode .nav-links a {
-        color: #e0e0e0;
+    
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
     }
-
-    body.dark-mode .nav-links a.active {
-        color: #C9A961;
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
     }
-
-    body.dark-mode .dark-mode-btn {
-        border-color: #fff;
-        color: #fff;
+    
+    .hero-text h1 {
+        font-size: 42px;
     }
+}
 
-    body.dark-mode .page-header {
-        background: #1a1a1a;
-    }
-
-    body.dark-mode .page-title {
-        color: #fff;
-    }
-
-    body.dark-mode .page-desc {
-        color: #aaa;
-    }
-
-    body.dark-mode .filter-btn {
-        background: #2a2a2a;
-        border-color: #444;
-        color: #aaa;
-    }
-
-    body.dark-mode .filter-btn.active,
-    body.dark-mode .filter-btn:hover {
-        background: #C9A961;
-        border-color: #C9A961;
-        color: #1a1a1a;
-    }
-
-    body.dark-mode .dresses-grid {
-        background: #1a1a1a;
-    }
-
-    body.dark-mode .dress-card {
-        background: #2a2a2a;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
-
-    body.dark-mode .dress-name {
-        color: #fff;
-    }
-
-    body.dark-mode .dress-desc {
-        color: #aaa;
-    }
-
-    body.dark-mode .dress-price {
-        color: #fff;
-    }
-
-    body.dark-mode .dress-footer {
-        border-top-color: #444;
-    }
-
-    body.dark-mode .order-btn {
-        background: #fff;
-        color: #1a1a1a;
-        border-color: #fff;
-    }
-
-    body.dark-mode .footer {
-        background: #111;
-        border-top: 1px solid rgba(255,255,255,0.1);
-    }
-
-    /* موبايل */
-    @media (max-width: 968px) {
-        .dresses-grid {
-            grid-template-columns: 1fr;
+        @media (max-width: 600px) {
+            .back-to-top {
+                bottom: 20px;
+                left: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
         }
-        .nav-links {
-            display: none;
-        }
-        .page-title {
-            font-size: 42px;
-        }
-    }
+        .order-btn {
+    display: inline-block;
+    background: #C9A961;
+    color: #2C2C2C;
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    transition: 0.3s;
+    margin-top: 15px;
+    border: 2px solid #C9A961;
+}
 
-    @media (max-width: 1200px) {
-        .dresses-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-  </style>
+.order-btn:hover {
+    background: transparent;
+    color: #C9A961;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(201,169,97,0.3);
+}
+
+body.dark-mode .order-btn {
+    background: #C9A961;
+    color: #1a1a1a;
+}
+
+body.dark-mode .order-btn:hover {
+    background: transparent;
+    color: #C9A961;
+}
+    </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="logo">اصالة<span>.</span></div>
-    <div class="nav-right">
-      <ul class="nav-links">
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="dress.html" class="active">الفساتين</a></li>
-        <li><a href="contact.html">تواصلي معانا</a></li>
-      </ul>
-      <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle Dark Mode">
-        <span id="modeIcon">🌙</span>
-      </button>
-    </div>
-  </nav>
 
-  <!-- عنوان الصفحة -->
-  <div class="page-header">
-    <div class="page-label">تشكيلتنا</div>
-    <h1 class="page-title">فساتين الزفاف</h1>
-    <p class="page-desc">اكتشفي مجموعة فساتين الزفاف الفاخرة المصممة خصيصاً ليومك المميز</p>
+    <!-- Navbar -->
+    <nav class="nav">
+        <div class="logo">اصالة<span>.</span></div>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="index.html"
+                    class="active">الرئيسية</a></li>
+                <li><a href="dress.html" title="شوفي كل الفساتين"></a</li>الفساتين</a></a>  
+
+                <li><a href="contact.html" title="Contact us"  >تواصلي معانا</a></li>
+            </ul>
+            <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle Dark Mode">
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+        
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-text">
+                <h1>عبايات <span class="gold">فاخرة</span><br>بتصميم عصري</h1>
+                <p>كل قطعة في اصالة بتتحاكي بحب وشغف. تصاميم حصرية تجمع بين الأصالة الخليجية واللمسة العصرية عشان تليق بيكي في كل مناسبة.</p>
+                <a href="#collections" class="hero-cta">شوفي الكولكشن</a>
+            </div>
+            <div class="hero-img">
+                <img src="dress2.jpg" alt="Hero Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="collections" id="collections">
+        <div class="section-header">
+            <div class="section-label">Collections</div>
+            <h2 class="section-title">كولكشن 2026</h2>
+        </div>
+
+        <div class="gallery-grid">
     
-    <!-- الفلاتر -->
-    <div class="filters">
-      <button class="filter-btn active" data-dress-id="all">الكل</button>
-      <button class="filter-btn" data-dress-id="classic">A-line</button>
-      <button class="filter-btn" data-dress-id="mermaid">حورية البحر</button>
-      <button class="filter-btn" data-dress-id="aline">كلاسيك</button>
-      <button class="filter-btn" data-dress-id="rosaline">بوهيمي</button>
-    </div>
-  </div>
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="dress1.jpg" alt="عباية الملكة">
+                </div>
+                <div class="gallery-info">
+                    <h3>عباية الملكة</h3>
+                    <p>تطريز يدوي فاخر • قصة ملكية</p>
+                    <div class="price">2,800 ج.م</div>
+                    <a href="https://wa.me/201021528577?text=عايزة%20عباية%20الملكة%20بـ%202800ج" title="سارعي بالحجز"   class="order-btn">اطلبيها واتساب</a>
+                </div>
+            </div>
+        
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="dress2.jpg" alt="عباية اللؤلؤ">
+                </div>
+                <div class="gallery-info">
+                    <h3>عباية اللؤلؤ</h3>
+                    <p>تفاصيل لؤلؤ طبيعي • إطلالة ساحرة</p>
+                    <div class="price">3,200 ج.م</div>
+                    <a href="https://wa.me/201021528577?text=عايزة%20عباية%20اللؤلؤ%20بـ%203200ج" title="سارعي بالحجز"   class="order-btn">اطلبيها واتساب</a>
+                </div>
+            </div>
+        
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="dress3.jpg" alt="عباية الأناقة">
+                </div>
+                <div class="gallery-info">
+                    <h3>عباية الأناقة</h3>
+                    <p>خامة حرير فاخرة • تصميم عصري</p>
+                    <div class="price">2,500 ج.م</div>
+                    <a href="https://wa.me/201021528577?text=عايزة%20عباية%20الأناقة%20بـ%202500ج" title="سارعي بالحجز"   class="order-btn">اطلبيها واتساب</a>
+                </div>
+            </div>
+        
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="dress4.jpg" alt="عباية الخليج">
+                </div>
+                <div class="gallery-info">
+                    <h3>عباية الخليج</h3>
+                    <p>نقوش تراثية • ألوان جذابة</p>
+                    <div class="price">2,200 ج.م</div>
+                    <a href="https://wa.me/201021528577?text=عايزة%20عباية%20الخليج%20بـ%202200ج"  title="سارعي بالحجز"  class="order-btn">اطلبيها واتساب</a>
+                </div>
+            </div>
+        
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="dress5.jpg" alt="عباية القمر">
+                </div>
+                <div class="gallery-info">
+                    <h3>عباية القمر</h3>
+                    <p>قصة واسعة • مريحة وأنيقة</p>
+                    <div class="price">2,000 ج.م</div>
+                    <a href="https://wa.me/201021528577?text=عايزة%20عباية%20القمر%20بـ%202000ج" title="سارعي بالحجز"   class="order-btn">اطلبيها واتساب</a>
+                </div>
+            </div>
+        
+            <div class="gallery-item">
+                <div class="image-wrapper">
+                    <img src="dress6.jpg" alt="عباية الورد">
+                </div>
+                <div class="gallery-info">
+                    <h3>عباية الورد</h3>
+                    <p>تطريز ورود • لمسة ناعمة</p>
+                    <div class="price">2,600 ج.م</div>
+                    <a href="https://wa.me/201021528577?text=عايزة%20عباية%20الورد%20بـ%202600ج" title="سارعي بالحجز"   class="order-btn">اطلبيها واتساب</a>
+                </div>
+            </div>
+        
+        </div>
+    </section>
+</section>
 
-  <!-- قسم الفساتين - الـ 6 فساتين كلهم موجودين -->
-  <div class="dresses-grid" id="dresses-section">
-    <!-- فستان Celeste -->
-    <div class="dress-card" id="celeste" data-category="classic">
-      <div class="dress-img">
-        <img src="dressw1.jpg" alt="فستان زفاف">
-      </div>
-      <div class="dress-info">
-        <div class="dress-category">فستان أميرة</div>
-        <h3 class="dress-name">Celeste</h3>
-        <p class="dress-desc">فستان أميرة بحمالات رفيعة للصدر مطرز بتفاصيل ناعمة، تنورة تل منفوشة بذيل طويل</p>
-        <div class="dress-footer">
-          <div class="dress-price">11,000 ج.م</div>
-          <a href="contact.html" class="order-btn">احجزي الآن</a>
-        </div>
-      </div>
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="about-text">
+        <div class="section-label">ABOUT Asalah</div>
+        <h2>قصة أصاله</h2>
+        <p>بدأت رحلتي مع تصميم العبايات من حبي للتفاصيل الدقيقة واللمسة الفاخرة. كل عباية بصممها لازم تعكس شخصية اللي لابساها.</p>
+        <p>بشتغل على كل قطعة بنفسي من أول اختيار القماش لحد آخر غرزة, كل كولكشن محدود وإصدار خاص.</p>
+        <p>هدفي إنك لما تلبسي من أصاله تحسي إنك ملكة في كل خطوة.</p>
+        <div class="signature">Asalah</div>
     </div>
+    <div class="about-img">
+        <img src="dress8.jpg" alt="Asalah">
+    </div>
+</section>
 
-    <!-- فستان Diana -->
-    <div class="dress-card" id="diana">
-      <div class="dress-img">
-        <img src="dressw6.jpg" alt="فستان زفاف">
-      </div>
-      <div class="dress-info">
-        <div class="dress-category">فستان ديانا</div>
-        <h3 class="dress-name">Diana</h3>
-        <p class="dress-desc">فستان أوف شولدر بأكمام طويلة منسدلة يكشف عن جمال الأكتاف محدد الخصر</p>
-        <div class="dress-footer">
-          <div class="dress-price">12,500 ج.م</div>
-          <a href="contact.html" class="order-btn">احجزي الآن</a>
-        </div>
-      </div>
-    </div>
-  
-    <!-- فستان Luna -->
-    <div class="dress-card" id="luna" data-category="classic">
-      <div class="dress-img">
-        <img src="dressw3.jpg" alt="فستان زفاف">
-      </div>
-      <div class="dress-info">
-        <div class="dress-category">لونا</div>
-        <h3 class="dress-name">Luna</h3>
-        <p class="dress-desc">فستان محدد والأكتاف مكشوفة والأكمام دانتيل، تطريز فرنسي فاخر على الصدر</p>
-        <div class="dress-footer">
-          <div class="dress-price">10,500 ج.م</div>
-          <a href="contact.html" class="order-btn">احجزي الآن</a>
-        </div>
-      </div>
-    </div>
-    
-    <!-- فستان Velora -->
-    <div class="dress-card" id="velora" data-category="aline">
-      <div class="dress-img">
-        <img src="dressw4.jpg" alt="فستان زفاف">
-        <span class="dress-badge">جديد</span>
-      </div>
-      <div class="dress-info">
-        <div class="dress-category">حورية البحر</div>
-        <h3 class="dress-name">Velora</h3>
-        <p class="dress-desc">فستان زفاف بأكمام طويلة من الدانتيل الفرنسي المطرز يدوياً</p>
-        <div class="dress-footer">
-          <div class="dress-price">15,000 ج.م</div>
-          <a href="contact.html" class="order-btn">احجزي الآن</a>
-        </div>
-      </div>
-    </div>
-  
-    <!-- فستان Talia -->
-    <div class="dress-card" id="talia" data-category="aline">
-      <div class="dress-img">
-        <img src="dressw2.jpg" alt="فستان زفاف">
-        <span class="dress-badge">حصري</span>
-      </div>
-      <div class="dress-info">
-        <div class="dress-category">تاليا</div>
-        <h3 class="dress-name">Talia</h3>
-        <p class="dress-desc">تصميم برقبة عالية من الدانتيل الناعم يعطي إحساس بالبساطة والرقي</p>
-        <div class="dress-footer">
-          <div class="dress-price">18,000 ج.م</div>
-          <a href="contact.html" class="order-btn">احجزي الآن</a>
-        </div>
-      </div>
-    </div>
-  
-    <!-- فستان Rosaline البوهيمي -->
-    <div class="dress-card" id="rosaline">
-      <div class="dress-img">
-        <img src="dressw5.jpg" alt="فستان زفاف">
-        <span class="dress-badge">الأكثر طلباً</span>
-      </div>
-      <div class="dress-info">
-        <div class="dress-category">روزالين</div>
-        <h3 class="dress-name">Rosaline</h3>
-        <p class="dress-desc">فستان A-Line أوف شولدر مطرز بورود بارزة، مع فتحة جانبية أنيقة يعطي لوك عصري</p>
-        <div class="dress-footer">
-          <div class="dress-price">9,000 ج.م</div>
-          <a href="contact.html" class="order-btn">احجزي الآن</a>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- CTA -->
+<section class="cta-section" id="contact">
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+        <h2>اطلبي تصميمك الخاص</h2>
+        <p>عايزة عباية بتفاصيلك أنتي؟ مقاسك، لونك المفضل، التطريز اللي بتحبيه<br>كلميني ونصممها سوا</p>
+        <a href="https://wa.me/201021528577?text=عايزة عباية تصميم خاص من اصالة" class="cta-btn">تواصلي واتساب</a>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-links">
-      <a href="index.html">الرئيسية</a>
-      <a href="dress.html">الفساتين</a>
-      <a href="contact.html">تواصلي معانا</a>
-    </div>
-    <p>© 2026 اصالة. جميع الحقوق محفوظة</p>
-  </footer>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://www.instagram.com/roueda_rody/" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/roueda.rody/" target="_blank">Facebook</a>
+            <a href="https://wa.me/201021528577" target="_blank">WhatsApp</a>
+        </div>
+        <p>Asalah Fashion © 2026 — Designed by ROUEDA</p>
+    </footer>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // الدارك مود
-      const darkModeToggle = document.getElementById('darkModeToggle');
-      const modeIcon = document.getElementById('modeIcon');
-      const body = document.body;
-      
-      if (localStorage.getItem('darkMode') === 'enabled') {
-        body.classList.add('dark-mode');
-        modeIcon.textContent = '☀️';
-      } else {
-        modeIcon.textContent = '☾︎';
-      }
+    <!-- زرار اطلع فوق -->
+    <button id="backToTop" class="back-to-top">↑</button>
 
-      darkModeToggle.addEventListener('click', function() {
-        body.classList.toggle('dark-mode');
-        if (body.classList.contains('dark-mode')) {
-          localStorage.setItem('darkMode', 'enabled');
-          modeIcon.textContent = '☀️';
-        } else {
-          localStorage.setItem('darkMode', 'disabled');
-          modeIcon.textContent = '☾︎';
+    <script>
+        // شيل الهاش من اللينك واطلعي فوق أول ما الصفحة تحمل
+        if (window.location.hash) {
+            history.replaceState(null, null, ' ');
         }
-      });
-
-      // الفلاتر
-      const filterButtons = document.querySelectorAll('.filter-btn');
-      const dressesSection = document.getElementById('dresses-section');
-      const allDresses = document.querySelectorAll('.dress-card');
-
-      filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          button.classList.add('active');
-
-          dressesSection.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start' 
-          });
-
-          const dressId = button.getAttribute('data-dress-id');
-          
-          allDresses.forEach(dress => {
-            if (dressId === 'all') {
-              dress.style.display = 'block';
-            } else if (dressId === 'classic') {
-              // اظهر Celeste + Luna
-              if (dress.getAttribute('data-category') === 'classic') {
-                dress.style.display = 'block';
-              } else {
-                dress.style.display = 'none';
-              }
-            } else if (dressId === 'aline') {
-              // اظهر Talia + Velora
-              if (dress.getAttribute('data-category') === 'aline') {
-                dress.style.display = 'block';
-              } else {
-                dress.style.display = 'none';
-              }
-            } else if (dressId === 'mermaid') {
-              // اظهر Velora بس
-              if (dress.id === 'velora') {
-                dress.style.display = 'block';
-              } else {
-                dress.style.display = 'none';
-              }
-            } else if (dress.id === dressId) {
-              dress.style.display = 'block';
-            } else {
-              dress.style.display = 'none';
-            }
-          });
+        
+        window.addEventListener('load', function() {
+            window.scrollTo(0, 0);
         });
-      });
-    });
-  </script>
-</body>
-</html>
+    
+        // زرار الاطلاع لفوق
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    
+        // الدارك مود - <script> 
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                localStorage.setItem('darkMode', null);
+            }
+        });
+        
+    </script>
+    </body>
+    </html>
