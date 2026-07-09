@@ -6,16 +6,119 @@
     <title>تواصلي معانا - اصالة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Amiri:wght@400;700&family=El+Messiri:wght@400;600;700&display=swap');
-        
-        * {
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');        
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake-error {
+    animation: shake 0.5s ease;
+    border-color: #e74c3c !important;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2) !important;
+}
+
+body.dark-mode .shake-error {
+    border-color: #ff6b6b !important;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2) !important;
+}
+/* قلوب بتقع */
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.heart {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background: #C9A961;
+    animation: fallDown 5s linear forwards;
+    opacity: 0.8;
+    transform: rotate(45deg);
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #C9A961;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -7.5px;
+    left: 0;
+}
+
+.heart::after {
+    left: -7.5px;
+    top: 0;
+}
+
+body.dark-mode .heart,
+body.dark-mode .heart::before,
+body.dark-mode .heart::after {
+    background: #E5D4A1;
+}
+@keyframes fallDown {
+    0% {
+        top: -60px;
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        top: 100vh;
+        transform: translateX(50px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+body.dark-mode .heart {
+    color: #E5D4A1;
+    opacity: 0.5;
+}
+body {
+    background: linear-gradient(-45deg, #fff5f8, #fff, #f8f5ff, #fff);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
+
+body.dark-mode .heart {
+    color: #E5D4A1;
+    opacity: 0.4;
+}
+  @keyframes gradientmove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+
+  }
+
+
+body.dark-mode {
+    background: linear-gradient(-45deg, #1a1a1a, #0a0a0a, #1a0a1a, #0a0a0a);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
+
+* {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
         body {
-            background: #FAF9F6;
             font-family: 'Cairo', sans-serif;
             color: #2C2C2C;
             overflow-x: hidden;
@@ -33,7 +136,7 @@
             z-index: 1000;
             background: rgba(250, 249, 246, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid #C9A961;
         }
 
         .nav-right {
@@ -61,11 +164,11 @@
         }
 
         .nav-links a {
-            color: #2C2C2C;
+            color: #2c2c2c;
             text-decoration: none;
             font-size: 15px;
             transition: 0.3s;
-            font-weight: 400;
+            font-weight: 600;
             position: relative;
         }
 
@@ -74,7 +177,7 @@
         }
 
         .nav-links a.active {
-            color: #C9A961;
+            color: #C9A961 !important;
             font-weight: 600;
         }
 
@@ -90,7 +193,7 @@
 
         .dark-mode-btn {
             background: transparent;
-            border: 2px solid #222;
+            border: 2px solid #C9A961;
             border-radius: 50%;
             width: 40px;
             height: 40px;
@@ -99,7 +202,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #222;
+            color: #000000;
             font-size: 20px;
         }
         
@@ -117,7 +220,7 @@
         .page-label {
             color: #C9A961;
             font-family: 'El Messiri', sans-serif;
-            font-size: 14px;
+            font-size: 20px;
             letter-spacing: 0px;
             margin-bottom: 12px;
             font-weight: 600;
@@ -127,13 +230,13 @@
             font-family: 'Amiri', serif;
             font-size: 64px;
             font-weight: 700;
-            color: #2C2C2C;
+            color: #1a1919;
             margin-bottom: 15px;
             line-height: 1.3;
         }
 
         .page-desc {
-            color: #666;
+            color: #C9A961;
             font-size: 17px;
             max-width: 600px;
             margin: 0 auto;
@@ -207,7 +310,7 @@
         }
 
         .info-text a:hover {
-            color: #2C2C2C;
+            color: #e6dfdf;
         }
 
         /* الفورم */
@@ -242,7 +345,7 @@
         .form-group select {
             width: 100%;
             padding: 14px 18px;
-            border: 2px solid #E0E0E0;
+            border: 2px solid #C9A961;
             border-radius: 10px;
             font-family: 'Cairo', sans-serif;
             font-size: 15px;
@@ -294,7 +397,7 @@
         .social-links a {
             width: 45px;
             height: 45px;
-            background: #FAF9F6;
+            background: #E0E0E0;
             border: 2px solid #E0E0E0;
             border-radius: 50%;
             display: flex;
@@ -310,7 +413,7 @@
             background: #C9A961;
             border-color: #C9A961;
             color: #fff;
-            transform: translateY(-3px);
+            transform: rotate(360deg) scale(1.2);
         }
 
         /* موبايل */
@@ -335,7 +438,7 @@
             padding: 50px 8%;
             text-align: center;
             background: #fff;
-            border-top: 1px solid rgba(0,0,0,0.05);
+            border-top: 1px solid #C9A961;
         }
 
         .footer-links {
@@ -367,18 +470,18 @@
             color: #e0e0e0;
         }
         body.dark-mode .dark-mode-btn {
-    border-color: #fff;
-    color: #fff;
+    border-color: #C9A961;
+    color: #C9A961;
 }
 
         body.dark-mode .nav {
             background: rgba(26, 26, 26, 0.95);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid #C9A961;
         }
 
         body.dark-mode .logo,
         body.dark-mode .nav-links a {
-            color: #e0e0e0;
+            color: #C9A961;
         }
 
         body.dark-mode .page-header {
@@ -416,19 +519,21 @@
 
         body.dark-mode .footer {
             background: #111;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid #C9A961;
         }
+        
     </style>
 </head>
 <body>
   <nav class="nav">
     <div class="logo">اصالة<span>.</span></div>
     <div class="nav-right">
-<ul class="nav-links">
-    <li><a href="#collections">الكولكشن</a></li>
-    <li><a href="dress.html">الفساتين</a></li>
-    <li><a href="contact.html">تواصلي معانا</a></li>
-</ul>      <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle Dark Mode">
+      <ul class="nav-links">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="dress.html">الفساتين</a></li>
+        <li><a href="contact.html" class="active">تواصلي معانا</a></li>
+      </ul>
+      <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle Dark Mode">
         <span id="modeIcon">🌙</span>
       </button>
     </div>
@@ -503,7 +608,7 @@
         <form id="contactForm">
           <div class="form-group">
             <label>الاسم بالكامل *</label>
-            <input type="text" name="name" required placeholder="اسمك">
+            <input type="text" name="name" required placeholder="الاسم الثلاثي">
           </div>
 
           <div class="form-group">
@@ -581,5 +686,37 @@
       this.reset();
     });
   </script>
-</body>
+  </script>
+  <div class="hearts-container"></div>
+
+<script>
+const heartsContainer = document.querySelector('.hearts-container');
+const heartEmojis = ['💕', '💖', '💗'];
+
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    
+    // مكان عشوائي فوق الشاشة
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.top = '-60px';
+    
+    // حجم عشوائي
+    heart.style.fontSize = Math.random() * 10 + 18 + 'px';
+    
+    // سرعة عشوائية بسيطة
+    heart.style.animationDuration = Math.random() * 2 + 4 + 's';
+    
+    heartsContainer.appendChild(heart);
+    
+    // امسحي القلب بعد ما ينزل
+    setTimeout(() => { 
+        heart.remove(); 
+    }, 6000);
+}
+
+// قلب كل ثانية ونص - مش مزعج
+setInterval(createHeart, 1500);
+</script>
+<body>
 </html>
