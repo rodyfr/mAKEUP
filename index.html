@@ -74,55 +74,54 @@
             color: #aaa;
         }
 
-        /* موبايل */
-        @media (max-width: 968px) {
-            .about {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-        }
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
 
-        html {
-            scroll-behavior: smooth;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            background: #FAF9F6;
-            font-family: 'Cairo', sans-serif;
-            color: #2C2C2C;
-            overflow-x: hidden;
-            transition: background 0.3s ease, color 0.3s ease;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        /* البانل */
-        .nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            background: rgba(250, 249, 246, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
+body {
+    background: #FAF9F6;
+    font-family: 'Cairo', sans-serif;
+    color: #2C2C2C;
+    overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
+}
 
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
+/* البانل */
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(250, 249, 246, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
 
-        .logo {
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* موبايل */
+@media (max-width: 968px) {
+    .about {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}        .logo {
             font-family: 'Playfair Di
                 splay', serif;
             font-size: 50px;
@@ -591,31 +590,33 @@
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav <ul class="nav-links">
-    <li><a href="index.html">الرئيسية</a></li>
-    <li><a href="dress.html">فساتين</a></li>
-    <li><a href="contact.html">تواصلي معانا</a></li>
-</ul>
-            <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle Dark Mode">
-                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-            </button>
-        </div>
-    </nav>
-
+<!-- Navbar -->
+<nav class="nav">
+    <div class="logo">أصالة</div>
+    <div class="nav-right">
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="dress.html">فساتين</a></li>
+            <li><a href="contact.html">تواصلي معانا</a></li>
+        </ul>
+        <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle Dark Mode">
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+        </button>
+    </div>
+</nav>
     <!-- Hero -->
     <section class="hero">
         <div class="hero-grid">
