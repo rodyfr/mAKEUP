@@ -6,93 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         /* About */
-.about {
-    padding: 120px 8%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    background: #fff;
-}
+        .about {
+            padding: 120px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            background: #fff;
+        }
 
-.about-img {
-    width: 100%;
-    height: 600px;
-    position: relative;
-    overflow: hidden;
-}
+        .about-img {
+            width: 100%;
+            height: 600px;
+            position: relative;
+            overflow: hidden;
+        }
 
-.about-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.about-img::after {
-    content: '';
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 100%;
-    height: 100%;
-    border: 2px solid #C9A961;
-    z-index: -1;
-}
+        .about-img::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #C9A961;
+            z-index: -1;
+        }
 
-.about-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    margin-bottom: 25px;
-    font-weight: 400;
-}
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
 
-.about-text p {
-    color: #666;
-    font-size: 16px;
-    line-height: 1.9;
-    margin-bottom: 20px;
-}
+        .about-text p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
 
-.signature {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    color: #C9A961;
-    font-style: italic;
-    margin-top: 30px;
-}
+        .signature {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: #C9A961;
+            font-style: italic;
+            margin-top: 30px;
+        }
 
-/* دارك مود للـ About */
-body.dark-mode .about {
-    background: #1a1a1a;
-}
+        /* دارك مود للـ About */
+        body.dark-mode .about {
+            background: #1a1a1a;
+        }
 
-body.dark-mode .about-text h2 {
-    color: #fff;
-}
+        body.dark-mode .about-text h2 {
+            color: #fff;
+        }
 
-body.dark-mode .about-text p {
-    color: #aaa;
-}
+        body.dark-mode .about-text p {
+            color: #aaa;
+        }
 
-/* موبايل */
-@media (max-width: 968px) {
-    .about {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-}
+        /* موبايل */
+        @media (max-width: 968px) {
+            .about {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+        }
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             background: #FAF9F6;
             font-family: 'Cairo', sans-serif;
@@ -153,43 +153,43 @@ body.dark-mode .about-text p {
         }
 
         .dark-mode-btn {
-    background: transparent;
-    border: 2px solid #222;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #222;
-}
+            background: transparent;
+            border: 2px solid #222;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #222;
+        }
 
-.dark-mode-btn:hover {
-    transform: rotate(20deg);
-}
+        .dark-mode-btn:hover {
+            transform: rotate(20deg);
+        }
 
-.dark-mode-btn .sun-icon {
-    display: none;
-}
+        .dark-mode-btn .sun-icon {
+            display: none;
+        }
 
-.dark-mode-btn .moon-icon {
-    display: block;
-}
+        .dark-mode-btn .moon-icon {
+            display: block;
+        }
 
-body.dark-mode .dark-mode-btn {
-    border-color: #fff;
-    color: #fff;
-}
+        body.dark-mode .dark-mode-btn {
+            border-color: #fff;
+            color: #fff;
+        }
 
-body.dark-mode .dark-mode-btn .sun-icon {
-    display: block;
-}
+        body.dark-mode .dark-mode-btn .sun-icon {
+            display: block;
+        }
 
-body.dark-mode .dark-mode-btn .moon-icon {
-    display: none;
-}
+        body.dark-mode .dark-mode-btn .moon-icon {
+            display: none;
+        }
         /* Hero */
         .hero {
             height: 100vh;
@@ -534,35 +534,35 @@ body.dark-mode .dark-mode-btn .moon-icon {
             }
         }
         .order-btn {
-    display: inline-block;
-    background: #C9A961;
-    color: #2C2C2C;
-    padding: 12px 35px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 700;
-    transition: 0.3s;
-    margin-top: 15px;
-    border: 2px solid #C9A961;
-}
+            display: inline-block;
+            background: #C9A961;
+            color: #2C2C2C;
+            padding: 12px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 700;
+            transition: 0.3s;
+            margin-top: 15px;
+            border: 2px solid #C9A961;
+        }
 
-.order-btn:hover {
-    background: transparent;
-    color: #C9A961;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(201,169,97,0.3);
-}
+        .order-btn:hover {
+            background: transparent;
+            color: #C9A961;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(201,169,97,0.3);
+        }
 
-body.dark-mode .order-btn {
-    background: #C9A961;
-    color: #1a1a1a;
-}
+        body.dark-mode .order-btn {
+            background: #C9A961;
+            color: #1a1a1a;
+        }
 
-body.dark-mode .order-btn:hover {
-    background: transparent;
-    color: #C9A961;
-}
+        body.dark-mode .order-btn:hover {
+            background: transparent;
+            color: #C9A961;
+        }
     </style>
 </head>
 <body>
@@ -573,8 +573,8 @@ body.dark-mode .order-btn:hover {
         <div class="nav-right">
             <ul class="nav-links">
                 <li><a href="#collections">الرئيسية</a></li>
-                <li><a href="#about">فساتين</a></li>
-                <li><a href="#contact">تواصلي معي</a></li>
+                <li><a href="dress.html">فساتين</a></li>
+                <li><a href="contact.html">تواصلي معانا</a></li>
             </ul>
             <button id="darkModeToggle" class="dark-mode-btn" aria-label="Toggle Dark Mode">
                 <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -592,7 +592,6 @@ body.dark-mode .order-btn:hover {
                     <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                 </svg>
             </button>
-        
         </div>
     </nav>
 
@@ -618,7 +617,6 @@ body.dark-mode .order-btn:hover {
         </div>
 
         <div class="gallery-grid">
-    
             <div class="gallery-item">
                 <div class="image-wrapper">
                     <img src="dress1.jpg" alt="عباية الملكة">
@@ -630,7 +628,7 @@ body.dark-mode .order-btn:hover {
                     <a href="https://wa.me/201021528577?text=عايزة%20عباية%20الملكة%20بـ%202800ج" class="order-btn">اطلبيها واتساب</a>
                 </div>
             </div>
-        
+
             <div class="gallery-item">
                 <div class="image-wrapper">
                     <img src="dress2.jpg" alt="عباية اللؤلؤ">
@@ -642,7 +640,7 @@ body.dark-mode .order-btn:hover {
                     <a href="https://wa.me/201021528577?text=عايزة%20عباية%20اللؤلؤ%20بـ%203200ج" class="order-btn">اطلبيها واتساب</a>
                 </div>
             </div>
-        
+
             <div class="gallery-item">
                 <div class="image-wrapper">
                     <img src="dress3.jpg" alt="عباية الأناقة">
@@ -654,7 +652,7 @@ body.dark-mode .order-btn:hover {
                     <a href="https://wa.me/201021528577?text=عايزة%20عباية%20الأناقة%20بـ%202500ج" class="order-btn">اطلبيها واتساب</a>
                 </div>
             </div>
-        
+
             <div class="gallery-item">
                 <div class="image-wrapper">
                     <img src="dress4.jpg" alt="عباية الخليج">
@@ -666,7 +664,7 @@ body.dark-mode .order-btn:hover {
                     <a href="https://wa.me/201021528577?text=عايزة%20عباية%20الخليج%20بـ%202200ج" class="order-btn">اطلبيها واتساب</a>
                 </div>
             </div>
-        
+
             <div class="gallery-item">
                 <div class="image-wrapper">
                     <img src="dress5.jpg" alt="عباية القمر">
@@ -678,7 +676,7 @@ body.dark-mode .order-btn:hover {
                     <a href="https://wa.me/201021528577?text=عايزة%20عباية%20القمر%20بـ%202000ج" class="order-btn">اطلبيها واتساب</a>
                 </div>
             </div>
-        
+
             <div class="gallery-item">
                 <div class="image-wrapper">
                     <img src="dress6.jpg" alt="عباية الورد">
@@ -690,28 +688,24 @@ body.dark-mode .order-btn:hover {
                     <a href="https://wa.me/201021528577?text=عايزة%20عباية%20الورد%20بـ%202600ج" class="order-btn">اطلبيها واتساب</a>
                 </div>
             </div>
-        
         </div>
     </section>
-</section>  <!-- قفلة collections -->
 
-<!-- About Section -->
-<section class="about" id="about">
-    <div class="about-text">
-        <div class="section-label">ABOUT Asalah</div>
-        <h2>قصة أصاله</h2>
-        <p>بدأت رحلتي مع تصميم العبايات من حبي للتفاصيل الدقيقة واللمسة الفاخرة. كل عباية بصممها لازم تعكس شخصية اللي لابساها.</p>
-        <p>بشتغل على كل قطعة بنفسي من أول اختيار القماش لحد آخر غرزة, كل كولكشن محدود وإصدار خاص.</p>
-        <p>هدفي إنك لما تلبسي من أصاله تحسي إنك ملكة في كل خطوة.</p>
-        <div class="signature">Asalah</div>
-    </div>
-    <div class="about-img">
-        <img src="dress8.jpg" alt="Asalah">
-    </div>
-</section>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-text">
+            <div class="section-label">ABOUT Asalah</div>
+            <h2>قصة أصاله</h2>
+            <p>بدأت رحلتي مع تصميم العبايات من حبي للتفاصيل الدقيقة واللمسة الفاخرة. كل عباية بصممها لازم تعكس شخصية اللي لابساها.</p>
+            <p>بشتغل على كل قطعة بنفسي من أول اختيار القماش لحد آخر غرزة, كل كولكشن محدود وإصدار خاص.</p>
+            <p>هدفي إنك لما تلبسي من أصاله تحسي إنك ملكة في كل خطوة.</p>
+            <div class="signature">Asalah</div>
+        </div>
+        <div class="about-img">
+            <img src="dress8.jpg" alt="Asalah">
+        </div>
+    </section>
 
-<!-- CTA -->
-<section class="cta-section" id="contact">
     <!-- CTA -->
     <section class="cta-section" id="contact">
         <h2>اطلبي تصميمك الخاص</h2>
@@ -737,14 +731,14 @@ body.dark-mode .order-btn:hover {
         if (window.location.hash) {
             history.replaceState(null, null, ' ');
         }
-        
+
         window.addEventListener('load', function() {
             window.scrollTo(0, 0);
         });
-    
+
         // زرار الاطلاع لفوق
         const backToTopBtn = document.getElementById('backToTop');
-        
+
         window.addEventListener('scroll', () => {
             if (window.scrollY > 300) {
                 backToTopBtn.classList.add('show');
@@ -752,32 +746,31 @@ body.dark-mode .order-btn:hover {
                 backToTopBtn.classList.remove('show');
             }
         });
-        
+
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
-    
-        // الدارك مود - مفيش <script> هنا
+
+        // الدارك مود
         const darkModeToggle = document.getElementById('darkModeToggle');
         const body = document.body;
-        
+
         if (localStorage.getItem('darkMode') === 'enabled') {
             body.classList.add('dark-mode');
         }
-        
+
         darkModeToggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
-            
+
             if (body.classList.contains('dark-mode')) {
                 localStorage.setItem('darkMode', 'enabled');
             } else {
                 localStorage.setItem('darkMode', null);
             }
         });
-        
     </script>
-    </body>
-    </html>
+</body>
+</html>
